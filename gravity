@@ -1,0 +1,18 @@
+def compute_attraction(): #defining the function
+
+    G = (6.6743 * 10**-11) #the value of G is a constant so it will always be the same
+    M1 = float(input("please enter the mass of the first ship in KGs - ")) #this is where the user will enter the value of M1
+    M2 = float(input("please enter the mass of the second ship in KGs - "))#this is where the user will enter the value of M2
+    r = float(input("please enter the distance between the two ships in metres - "))#this is where the user will enter the value of r
+
+
+    F=(G*M1*M2)/r**2 #this is the formula for calculating F, it multiplies G,M1,M2 and divides it by r**2
+
+    print("F = ",F) #this is the print function for F, it will output the value of F
+
+
+compute_attraction()#this closes the compute attraction function
+
+
+
+
