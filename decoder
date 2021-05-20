@@ -1,0 +1,32 @@
+def decode(code):
+    """
+    main decode function
+
+    :return: return is the output function
+    """
+    numbers = code.split(" ")  # function splits up the numbers so that they dont print as one number
+
+    output = ""
+    for num in numbers:  # for loop checking the number variable
+
+        number_length = len(num)
+        # for loop that uses the i variable and makes sure its in the range of number length
+        # it then sets the variable octal_digit to be equal to the equation next to it
+        # then it makes code  variable equal to the equaltion that turns the number to an octal
+
+        code = 0
+        for i in range(number_length):
+            octal_digit = int(num[i])
+            code += octal_digit * pow(8, number_length - i - 1)
+
+        output += str(code) + " "  # output variable being used to turn the code var into an  octal
+
+    if isinstance(code, int):  # print function that assures that the variable will not be decimal
+        print("your octal value is - ")
+    else:
+        print("incorrect value entered")
+
+    return output.rstrip()  # return function that calls the output variable
+
+
+print(decode("20 10 60"))
