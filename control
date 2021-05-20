@@ -1,0 +1,48 @@
+def choose_action():
+    s1 = float(input(
+        "please enter the reading from the range finder on the north side of the rover in metres - "))  # this will ask for the user input for s1
+    s2 = float(input(
+        "please enter the reading from the range finder on the east side of the rover in metres - "))  # this will ask for the user input for s2
+    s3 = float(input(
+        "please enter the reading from the range finder on the south side of the the rover in metres - "))  # this will ask for the user input for s3
+    s4 = float(input(
+        "please enter the reading from the range finder on the west side of the rover in metres - "))  # this will ask for the user input for s4
+    t = 0.1  # this value is a constant so it will stay as 0.1
+
+    if (s3 >= t and s1 < t and s2 < t and s4 < t):  # this number will only print if s3 is above 0.1
+        print("S")
+    elif (s4 >= t and s1 < t and s2 < t and s3 < t):  # this number will only print if s4 is above 0.1
+        print("W")
+    elif (s1 >= t and s2 < t and s3 < t and s4 < t):  # this number will only print if s1 is above 0.1
+        print("N")
+    elif (s2 >= t and s1 < t and s3 < t and s4 < t):  # this number will only print if s2 is above 0.1
+        print("E")
+    elif (s3 >= t and s4 >= t and s2 < t and s1 < t):  # this number will only print if s3 and s4 are above 0.1
+        print("SW")
+    elif ((s2 >= t or s4 >= t) and s1 < t and s3 < t):  # this number will only print if s2 and s4 are above 0.1
+        print("E or W")
+    elif (s3 >= t and s2 >= t and s1 < t and s4 < t):  # this number will only print is s3 and s2 are above 0.1
+        print("SE")
+    elif (s1 >= t and s4 >= t and s2 < t and s3 < t):  # this number will only print if s1 and s4 are above 0.1
+        print("NW")
+    elif ((s1 >= t or s3 >= t) and s2 < t and s4 < t):  # this number will only print if s1 and s3 are above 0.1
+        print("N or S")
+    elif (s1 >= t and s2 >= t and s3 < t and s4 < t):  # this number will only print if s1 and s2 are above 0.1
+        print("NE")
+    elif (s3 <= t and s1 > t and s2 > t and s4 > t):  # this number will only print if s3 is are above 0.1
+        print("S")
+    elif (s4 <= t and s1 > t and s2 > t and s3 > t):  # this number will only print if s4 is are above 0.1
+        print("W")
+    elif (s2 <= t and s1 > t and s4 > t and s3 > t):  # this number will only print if s2 is above 0.1
+        print("E")
+    elif (s1 <= t and s2 > t and s3 > t and s4 > t):  # this number will only print if s1 is above 0.1
+        print("N")
+    elif (s1 > t and s2 > t and s3 > t and s4 > t):  # this will only print if all values are above 0.1
+        print("continue")
+    elif (s1 < t and s2 < t and s3 < t and s4 < t):  # this will only print if no values are above 0.1
+        print("Trapped")
+    else:
+        print("this is an invalid option")  # this will only print if none of the conditions are met
+
+
+choose_action()
